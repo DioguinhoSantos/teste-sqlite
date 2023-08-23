@@ -5,6 +5,7 @@
 
 -- ponto e vírgula define o fim da query --
 
+-- not null indica que o campo tem de ser obrigatoriamente preenchido --
 CREATE TABLE customers2 (
 	id TEXT PRIMARY KEY UNIQUE NOT NULL,
 	name TEXT NOT NULL,
@@ -26,7 +27,7 @@ FROM customers ;
 
 PRAGMA table_info('customers');
 
--- sempre respeitando a ordem das propriedades --
+-- sempre respeitando a ordem das propriedades / populando a tabela --
 INSERT INTO customers (id, name, email, age)
 VALUES ('C002', 'Coliro', 'coliro@email.com', 40);
 
@@ -36,3 +37,9 @@ UPDATE customers
 WHERE id = 'C002';
 
 
+-- deletar uma linha na tabela --
+DELETE FROM customers 
+WHERE id = 'C001';
+
+--deletar uma tabela inteira --
+DROP TABLE customers;
